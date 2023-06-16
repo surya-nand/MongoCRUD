@@ -58,7 +58,7 @@ app.delete('/employees/:id',(req,res) =>{
     // Delete the details in DB  using id 
     let {id} = req.params
     const {age} = req.body;
-    Employee.findByIdAndUpdate(id,{
+    Employee.findByIdAndDelete(id,{
         age : age
     }).then((employee) => {
         res.json("Employee details deleted",employee)
